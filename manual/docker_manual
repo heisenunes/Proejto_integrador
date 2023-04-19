@@ -1,0 +1,29 @@
+# Docker Manual
+
+## 1) Clone Repository & change .env.prod
+
+```
+git clone https://git.fe.up.pt/alexandre.valle/dei-acolhimento.git
+```
+
+## 2) Docker build & up
+
+```
+cd dei-acolhimento/src
+
+docker-compose up -d --build
+```
+
+## First time setup DB
+
+```
+docker-compose exec app php artisan migrate --force
+
+docker-compose exec app php artisan db:seed
+```
+
+## 3) Change the password of user postgres in container postgres:14
+
+```
+docker exec postgres:14 psql -c "alter user postgres with password '01230123';" -U postgres
+```
