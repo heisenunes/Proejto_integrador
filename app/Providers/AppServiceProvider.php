@@ -34,7 +34,10 @@ class AppServiceProvider extends ServiceProvider
                 ->line('Clique no botão abaixo para verificar o seu endereço de e-mail.')
                 ->action('Verificar endereço de e-mail', $url);
         });
-
+        
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
 //        URL::forceScheme('https');
     }
 }
