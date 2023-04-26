@@ -10,7 +10,7 @@ RUN npm i
 RUN npm run prod
 
 
-FROM php:8.0-apache-buster as production
+FROM php:8.1-apache-buster as production 
 
 #ENV APP_ENV=production
 #ENV APP_DEBUG=false
@@ -30,3 +30,7 @@ RUN php artisan config:cache && \
     chmod 777 -R /var/www/html/storage/ && \
     chown -R www-data:www-data /var/www/ && \
     a2enmod rewrite
+
+EXPOSE 80
+
+CMD ["apache2-foreground"]
