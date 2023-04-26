@@ -27,7 +27,7 @@ COPY .env.prod /var/www/html/.env
 
 RUN php artisan config:cache && \
     php artisan route:cache && \
-    php artisan migrate:fresh --seed && \
+    php artisan migrate:fresh && \
     chmod 777 -R /var/www/html/storage/ && \
     chown -R www-data:www-data /var/www/ && \
     a2enmod rewrite
