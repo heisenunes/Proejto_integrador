@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-  /*  public function show()
+   public function show()
     {
         $topics = Topic::orderBy('order_id', 'asc')->get();
 
@@ -21,5 +21,5 @@ class HomeController extends Controller
         return view('pages.home', ['topics' => $topics, 'finishedTopics' => $finishedTopics]);
 
     }
-    */
+    
 }
