@@ -27,6 +27,9 @@ COPY --from=build-npm /usr/app /var/www/html
 COPY docker/000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY .env.prod /var/www/html/.env
 
+RUN apt-get update
+RUN apt-get install npm -y
+
 RUN php artisan config:cache && \
     php artisan route:cache && \
     chmod 777 -R /var/www/html/storage/ && \
