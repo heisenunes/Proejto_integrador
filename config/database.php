@@ -66,11 +66,11 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'containers-us-west-166.railway.app'), // 127.0.0.1
-            'port' => env('DB_PORT', '7842'), // 5432
-            'database' => env('DB_DATABASE', 'railway'),  //forge
-            'username' => env('DB_USERNAME', 'postgres'), // forge
-            'password' => env('DB_PASSWORD', 'N8FTuPZqdWGRVURxSU7a'),
+            'host' => env('DB_HOST', '127.0.0.1'), 
+            'port' => env('DB_PORT', '5432'), //5432
+            'database' => env('DB_DATABASE', 'forge'),  //forge
+            'username' => env('DB_USERNAME', 'forge'), // forge
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,

@@ -6,6 +6,8 @@ RUN composer install --prefer-dist --no-dev --optimize-autoloader --no-interacti
 FROM node:18 as build-npm
 WORKDIR /usr/app
 COPY --from=build /app ./
+RUN apt-get update
+RUN apt-get install npm -y
 RUN npm i
 RUN npm run prod
 
