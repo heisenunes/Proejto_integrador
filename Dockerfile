@@ -36,6 +36,6 @@ RUN php artisan config:cache && \
     chown -R www-data:www-data /var/www/ && \
     a2enmod rewrite
 
-EXPOSE 443
+EXPOSE 80
 
 CMD ["apache2-foreground"]
